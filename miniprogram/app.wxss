@@ -1,0 +1,46 @@
+/** app.wxss **/
+page {
+  /* 主题色系 */
+  --primary-color: #1890FF;
+  --primary-gradient-start: #1890FF;
+  --primary-gradient-end: #0050B3;
+  --secondary-color: #FAAD14;
+  --success-color: #52C41A;
+  --error-color: #FF4D4F;
+  
+  /* 背景色 */
+  --bg-color: #F5F7FA;
+  --card-bg: #FFFFFF;
+  
+  /* 文字颜色 */
+  --text-main: #303133;
+  --text-secondary: #606266;
+  --text-placeholder: #909399;
+  
+  /* 圆角与阴影 */
+  --radius-sm: 8rpx;
+  --radius-md: 16rpx;
+  --radius-lg: 24rpx;
+  --shadow-sm: 0 2rpx 8rpx rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8rpx 24rpx rgba(0, 0, 0, 0.12);
+
+  background-color: var(--bg-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+} 
+
+/* 通用按钮样式 */
+button {
+  font-weight: 600;
+}
+button::after {
+  border: none;
+}

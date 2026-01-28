@@ -1,0 +1,113 @@
+page {
+  background-color: #f0f2f5;
+}
+.container {
+  padding: 30rpx;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-bottom: 100rpx;
+}
+.score-card {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 60rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.05);
+  margin-bottom: 40rpx;
+}
+.score-label {
+  font-size: 28rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+}
+.score-value {
+  font-size: 100rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.score-value.pass {
+  color: #2d8cf0;
+}
+.score-value.fail {
+  color: #ff4d4f;
+}
+.score-comment {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+}
+.list-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  padding-left: 20rpx;
+  border-left: 8rpx solid #2d8cf0;
+}
+.result-item {
+  background-color: #fff;
+  padding: 30rpx;
+  border-radius: 16rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.02);
+}
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+.q-num {
+  font-weight: bold;
+  color: #333;
+}
+.status.correct {
+  color: #52c41a;
+}
+.status.wrong {
+  color: #ff4d4f;
+}
+.q-content {
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+.wrong-detail {
+  background-color: #fff1f0;
+  padding: 20rpx;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+.wrong-text {
+  color: #ff4d4f;
+  font-weight: bold;
+}
+.correct-text {
+  color: #52c41a;
+  font-weight: bold;
+}
+.explanation {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  padding: 20rpx;
+  border-radius: 8rpx;
+}
+.exp-label {
+  font-weight: bold;
+  color: #333;
+}
+.restart-btn {
+  width: 100% !important;
+  background-color: #2d8cf0;
+  color: white;
+  border-radius: 50rpx;
+  padding: 24rpx 0;
+  font-size: 34rpx;
+  font-weight: bold;
+  box-shadow: 0 10rpx 20rpx rgba(45, 140, 240, 0.3);
+  margin-top: 40rpx;
+}

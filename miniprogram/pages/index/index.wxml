@@ -1,0 +1,67 @@
+<view class="container">
+  <!-- 顶部背景 -->
+  <view class="home-header">
+    <view class="header-content">
+      <view class="greeting">
+        <text class="greet-text">你好，同学</text>
+        <text class="greet-sub">今天也要提高警惕哦</text>
+      </view>
+      <view class="header-icon">
+        <image src="../../images/icons/question.svg" mode="aspectFit"></image>
+      </view>
+    </view>
+    <!-- 装饰圆 -->
+    <view class="circle-1"></view>
+    <view class="circle-2"></view>
+  </view>
+
+  <!-- 主要内容区，向上浮动 -->
+  <view class="main-content">
+    
+    <!-- 每日一贴卡片 -->
+    <view class="daily-tip-card">
+      <view class="tip-label">每日反诈小贴士</view>
+      <view class="tip-text">“凡是自称公检法要求汇款到‘安全账户’的，都是诈骗！”</view>
+      <view class="tip-date">{{todayDate}}</view>
+    </view>
+
+    <!-- 核心功能入口 -->
+    <view class="action-grid">
+      <view class="action-card primary" bindtap="startQuiz">
+        <view class="action-info">
+          <text class="action-title">开始挑战</text>
+          <text class="action-desc">答题赢积分</text>
+        </view>
+        <image class="action-img" src="../../images/icons/question.svg"></image>
+      </view>
+      
+      <view class="action-card secondary" bindtap="goToRank">
+        <view class="action-info">
+          <text class="action-title">排行榜</text>
+          <text class="action-desc">查看排名</text>
+        </view>
+        <image class="action-img" src="../../images/icons/goods-active.png"></image>
+      </view>
+    </view>
+
+    <!-- 活动规则 -->
+    <view class="rules-section">
+      <view class="section-title">活动规则</view>
+      <view class="rule-list">
+        <view class="rule-row">
+          <view class="rule-dot"></view>
+          <text>共5道题目，满分100分</text>
+        </view>
+        <view class="rule-row">
+          <view class="rule-dot"></view>
+          <text>答题结束后即刻出分并累计积分</text>
+        </view>
+        <view class="rule-row">
+          <view class="rule-dot"></view>
+          <text>每周积分排名前三名有神秘奖励</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

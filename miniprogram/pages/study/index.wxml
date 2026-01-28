@@ -1,0 +1,57 @@
+<view class="study-container">
+  <!-- 搜索栏（仅视觉） -->
+  <view class="search-bar">
+    <view class="search-input">
+      <icon type="search" size="14" color="#999"/>
+      <text>搜索诈骗关键词，如"刷单"</text>
+    </view>
+  </view>
+
+  <!-- 顶部Tabs -->
+  <view class="tabs">
+    <view class="tab-item {{currentTab === 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">常见骗局</view>
+    <view class="tab-item {{currentTab === 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">真实案例</view>
+  </view>
+
+  <!-- 内容区域 -->
+  <scroll-view scroll-y class="content-scroll">
+    <!-- 骗局百科列表 -->
+    <view wx:if="{{currentTab === 0}}" class="card-list">
+      <view class="knowledge-card" wx:for="{{knowledgeList}}" wx:key="id">
+        <view class="k-header">
+          <view class="k-title">{{item.title}}</view>
+          <view class="k-tag">{{item.tag}}</view>
+        </view>
+        <view class="k-desc">{{item.desc}}</view>
+        <view class="k-footer">
+          <text>防骗指数：</text>
+          <view class="stars">★★★★★</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 真实案例列表 -->
+    <view wx:if="{{currentTab === 1}}" class="case-list">
+      <view class="case-card" wx:for="{{caseList}}" wx:key="id">
+        <view class="case-header">
+          <view class="case-title">{{item.title}}</view>
+          <view class="case-amount">涉案：{{item.amount}}</view>
+        </view>
+        <view class="case-content">
+          <view class="case-row">
+            <text class="label">受害人：</text>
+            <text>{{item.victim}}</text>
+          </view>
+          <view class="case-row">
+            <text class="label">经过：</text>
+            <text class="desc">{{item.story}}</text>
+          </view>
+        </view>
+        <view class="case-alert">
+          <icon type="warn" size="14" color="#FF4D4F"/>
+          <text>警示：{{item.alert}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

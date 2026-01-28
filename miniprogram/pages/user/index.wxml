@@ -1,0 +1,105 @@
+<view class="user-container">
+  <!-- 头部背景图 -->
+  <view class="header-bg"></view>
+
+  <!-- 用户信息卡片 (悬浮) -->
+  <view class="user-card">
+    <view class="user-info-row">
+      <block wx:if="{{userInfo}}">
+        <image class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <view class="info-right">
+          <view class="nickname-row">
+            <text class="nickname">{{userInfo.nickName}}</text>
+            <view class="level-tag">Lv.{{level}}</view>
+          </view>
+          <view class="user-desc">已坚持学习 {{studyDays || 1}} 天</view>
+        </view>
+        <view class="checkin-btn {{hasCheckedIn ? 'disabled' : ''}}" bindtap="doCheckIn">
+          {{hasCheckedIn ? '已签到' : '签到'}}
+        </view>
+      </block>
+      <block wx:else>
+        <image class="avatar" src="../../images/icons/avatar.png" mode="cover"></image>
+        <view class="info-right" bindtap="getUserProfile">
+          <view class="nickname">点击登录</view>
+          <view class="user-desc">登录后同步学习进度</view>
+        </view>
+      </block>
+    </view>
+    
+    <!-- 数据概览 -->
+    <view class="stats-row">
+      <view class="stat-item">
+        <view class="stat-num">{{userData.totalScore || 0}}</view>
+        <view class="stat-label">总积分</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-num">{{userData.quizCount || 0}}</view>
+        <view class="stat-label">答题次数</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-num">{{userData.rank || '-'}}</view>
+        <view class="stat-label">当前排名</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 勋章墙 -->
+  <view class="section-card">
+    <view class="card-header">
+      <text class="card-title">我的勋章</text>
+      <text class="card-more">查看全部 ></text>
+    </view>
+    <scroll-view scroll-x class="badge-scroll" enable-flex>
+      <view class="badge-item {{item.unlocked ? '' : 'locked'}}" wx:for="{{badges}}" wx:key="id">
+        <view class="badge-icon-box">
+          <image src="{{item.icon}}" class="badge-icon"></image>
+        </view>
+        <view class="badge-name">{{item.name}}</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 菜单列表 -->
+  <view class="menu-list">
+    <view class="menu-item" bindtap="navigateToRank">
+      <view class="menu-left">
+        <view class="menu-icon-box" style="background: #E6F7FF">
+          <image class="menu-icon" src="../../images/icons/goods-active.png"></image>
+        </view>
+        <text>排行榜</text>
+      </view>
+      <image class="arrow-icon" src="../../images/arrow.svg"></image>
+    </view>
+    <view class="menu-item" bindtap="navigateToHistory">
+      <view class="menu-left">
+        <view class="menu-icon-box" style="background: #FFF7E6">
+          <image class="menu-icon" src="../../images/icons/examples-active.png"></image>
+        </view>
+        <text>答题记录</text>
+      </view>
+      <image class="arrow-icon" src="../../images/arrow.svg"></image>
+    </view>
+    <view class="menu-item">
+      <view class="menu-left">
+        <view class="menu-icon-box" style="background: #F9F0FF">
+           <!-- 暂时用设置图标替代 -->
+          <image class="menu-icon" src="../../images/icons/setting.svg"></image> 
+        </view>
+        <text>个人设置</text>
+      </view>
+      <image class="arrow-icon" src="../../images/arrow.svg"></image>
+    </view>
+    <button class="menu-item feedback-btn" open-type="contact">
+      <view class="menu-left">
+        <view class="menu-icon-box" style="background: #E6FFFB">
+          <image class="menu-icon" src="../../images/icons/customer-service.svg"></image>
+        </view>
+        <text>联系客服</text>
+      </view>
+      <image class="arrow-icon" src="../../images/arrow.svg"></image>
+    </button>
+  </view>
+  
+  <view class="footer-info">信息工程学院 © 2026</view>
+</view>

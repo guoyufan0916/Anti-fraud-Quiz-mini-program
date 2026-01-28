@@ -1,0 +1,25 @@
+<view class="history-container">
+  <block wx:if="{{historyList.length > 0}}">
+    <view class="history-list">
+      <view class="history-item" wx:for="{{historyList}}" wx:key="index">
+        <view class="item-header">
+          <view class="item-time">{{item.date}}</view>
+          <view class="item-score {{item.score >= 60 ? 'pass' : 'fail'}}">{{item.score}}分</view>
+        </view>
+        <view class="item-detail">
+          <text>答对: {{item.correctCount}}/{{item.total}}</text>
+          <text class="divider">|</text>
+          <text>{{item.score >= 60 ? '挑战成功' : '继续努力'}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+  
+  <block wx:else>
+    <view class="empty-state">
+      <image class="empty-img" src="../../images/icons/question.svg"></image>
+      <text class="empty-text">暂无答题记录</text>
+      <button class="go-btn" bindtap="goQuiz">去答题</button>
+    </view>
+  </block>
+</view>

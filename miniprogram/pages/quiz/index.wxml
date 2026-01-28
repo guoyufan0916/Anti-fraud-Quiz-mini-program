@@ -1,0 +1,45 @@
+<view class="container">
+  <!-- 顶部状态栏 -->
+  <view class="quiz-header">
+    <view class="progress-box">
+      <view class="progress-text">进度 {{currentQuestionIndex + 1}}/{{totalQuestions}}</view>
+      <view class="progress-bg">
+        <view class="progress-bar" style="width: {{((currentQuestionIndex + 1) / totalQuestions) * 100}}%"></view>
+      </view>
+    </view>
+    <view class="timer-box {{timeLeft <= 5 ? 'urgent' : ''}}">
+      <icon type="waiting" size="14" color="{{timeLeft <= 5 ? '#FF4D4F' : '#1890FF'}}"/>
+      <text>{{timeLeft}}s</text>
+    </view>
+  </view>
+
+  <!-- 题目卡片 -->
+  <view class="question-card">
+    <view class="q-type-tag">{{currentQuestion.type === 'single' ? '单选题' : '判断题'}}</view>
+    <view class="q-text">{{currentQuestion.question}}</view>
+  </view>
+
+  <!-- 选项列表 -->
+  <view class="options-list">
+    <view 
+      wx:for="{{currentQuestion.options}}" 
+      wx:key="label" 
+      class="option-item {{currentSelected === item.label ? 'selected' : ''}}"
+      bindtap="selectOption"
+      data-label="{{item.label}}"
+    >
+      <view class="option-icon">{{item.label}}</view>
+      <view class="option-content">{{item.content}}</view>
+      <view class="check-icon" wx:if="{{currentSelected === item.label}}">✔</view>
+    </view>
+  </view>
+
+  <!-- 底部按钮 -->
+  <button 
+    class="next-btn {{!currentSelected ? 'disabled' : ''}}" 
+    bindtap="nextQuestion"
+    disabled="{{!currentSelected}}"
+  >
+    {{currentQuestionIndex === totalQuestions - 1 ? '提交试卷' : '下一题'}}
+  </button>
+</view>

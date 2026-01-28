@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="score-card">
+    <view class="score-label">最终得分</view>
+    <view class="score-value {{score >= 60 ? 'pass' : 'fail'}}">{{score}}</view>
+    <view class="score-comment">{{score >= 80 ? '反诈小能手！' : (score >= 60 ? '还不错，继续加油！' : '安全意识有待提高哦')}}</view>
+  </view>
+
+  <view class="result-list">
+    <view class="list-title">答题详情</view>
+    <view wx:for="{{results}}" wx:key="index" class="result-item">
+      <view class="result-header">
+        <text class="q-num">题目 {{index + 1}}</text>
+        <text class="status {{item.isCorrect ? 'correct' : 'wrong'}}">{{item.isCorrect ? '回答正确' : '回答错误'}}</text>
+      </view>
+      <view class="q-content">{{item.question.question}}</view>
+      
+      <view wx:if="{{!item.isCorrect}}" class="wrong-detail">
+        <view>你的答案：<text class="wrong-text">{{item.userAnswer}}</text></view>
+        <view>正确答案：<text class="correct-text">{{item.question.answer}}</text></view>
+      </view>
+      
+      <view class="explanation">
+        <text class="exp-label">解析：</text>{{item.question.explanation}}
+      </view>
+    </view>
+  </view>
+
+  <button class="restart-btn" bindtap="restart">再来一次</button>
+</view>

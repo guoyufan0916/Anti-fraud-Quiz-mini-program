@@ -1,0 +1,178 @@
+page {
+  background-color: var(--bg-color);
+}
+.home-header {
+  height: 360rpx;
+  background: linear-gradient(135deg, var(--primary-gradient-start) 0%, var(--primary-gradient-end) 100%);
+  position: relative;
+  overflow: hidden;
+  border-bottom-left-radius: 40rpx;
+  border-bottom-right-radius: 40rpx;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+.header-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40rpx;
+}
+.greeting {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+.greet-text {
+  font-size: 48rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+.greet-sub {
+  font-size: 28rpx;
+  opacity: 0.9;
+}
+.header-icon image {
+  width: 120rpx;
+  height: 120rpx;
+  opacity: 0.9;
+}
+
+/* 装饰背景圆 */
+.circle-1 {
+  position: absolute;
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  top: -60rpx;
+  right: -60rpx;
+}
+.circle-2 {
+  position: absolute;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  bottom: 40rpx;
+  left: -40rpx;
+}
+
+.main-content {
+  padding: 0 30rpx;
+  margin-top: -80rpx;
+  position: relative;
+  z-index: 20;
+}
+
+.daily-tip-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 30rpx;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 30rpx;
+}
+.tip-label {
+  font-size: 24rpx;
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 16rpx;
+  display: inline-block;
+  background: #E6F7FF;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+}
+.tip-text {
+  font-size: 30rpx;
+  color: var(--text-main);
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 16rpx;
+}
+.tip-date {
+  font-size: 24rpx;
+  color: #999;
+  text-align: right;
+}
+
+.action-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40rpx;
+}
+.action-card {
+  flex: 0.48;
+  height: 200rpx;
+  border-radius: var(--radius-md);
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s;
+}
+.action-card:active {
+  transform: translateY(2rpx);
+}
+.action-card.primary {
+  background: linear-gradient(135deg, #40A9FF 0%, #1890FF 100%);
+  color: #fff;
+}
+.action-card.secondary {
+  background: #fff;
+  color: var(--text-main);
+}
+.action-info {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+.action-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-bottom: 8rpx;
+}
+.action-desc {
+  font-size: 24rpx;
+  opacity: 0.8;
+}
+.action-img {
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  opacity: 0.8;
+}
+
+.rules-section {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 30rpx;
+  box-shadow: var(--shadow-sm);
+}
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: var(--text-main);
+  margin-bottom: 24rpx;
+  padding-left: 16rpx;
+  border-left: 8rpx solid var(--primary-color);
+}
+.rule-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16rpx;
+  font-size: 28rpx;
+  color: var(--text-secondary);
+}
+.rule-dot {
+  width: 10rpx;
+  height: 10rpx;
+  background: var(--primary-color);
+  border-radius: 50%;
+  margin-right: 16rpx;
+}

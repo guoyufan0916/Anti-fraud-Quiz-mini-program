@@ -1,0 +1,66 @@
+<view class="rank-container">
+  <!-- 顶部背景与领奖台 -->
+  <view class="rank-header-bg">
+    <view class="rank-title">排行榜</view>
+    
+    <view class="podium-area">
+      <!-- 第二名 (左) -->
+      <view class="podium-item rank-2">
+        <view class="avatar-wrapper">
+          <image class="avatar" src="{{rankList[1].avatarUrl || '../../images/icons/avatar.png'}}"></image>
+          <view class="rank-badge silver">2</view>
+        </view>
+        <view class="podium-pillar">
+          <view class="name">{{rankList[1].nickName || '虚位以待'}}</view>
+          <view class="score">{{rankList[1].score || 0}}</view>
+        </view>
+      </view>
+
+      <!-- 第一名 (中) -->
+      <view class="podium-item rank-1">
+        <view class="avatar-wrapper">
+          <image class="avatar" src="{{rankList[0].avatarUrl || '../../images/icons/avatar.png'}}"></image>
+          <view class="rank-badge gold">1</view>
+        </view>
+        <view class="podium-pillar">
+          <view class="name">{{rankList[0].nickName || '虚位以待'}}</view>
+          <view class="score">{{rankList[0].score || 0}}</view>
+        </view>
+      </view>
+
+      <!-- 第三名 (右) -->
+      <view class="podium-item rank-3">
+        <view class="avatar-wrapper">
+          <image class="avatar" src="{{rankList[2].avatarUrl || '../../images/icons/avatar.png'}}"></image>
+          <view class="rank-badge bronze">3</view>
+        </view>
+        <view class="podium-pillar">
+          <view class="name">{{rankList[2].nickName || '虚位以待'}}</view>
+          <view class="score">{{rankList[2].score || 0}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 剩余排名列表 -->
+  <view class="rank-list-container">
+    <view class="list-scroll">
+      <view class="rank-item" wx:for="{{rankList}}" wx:key="index" wx:if="{{index > 2}}">
+        <view class="rank-num">{{index + 1}}</view>
+        <image class="rank-avatar" src="{{item.avatarUrl || '../../images/icons/avatar.png'}}"></image>
+        <view class="rank-name">{{item.nickName}}</view>
+        <view class="rank-score">{{item.score}}</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 底部当前用户排名 -->
+  <view class="my-rank-bar" wx:if="{{myRank}}">
+    <view class="my-info">
+      <view class="rank-num">{{myRank.rank}}</view>
+      <image class="rank-avatar" src="{{myRank.avatarUrl}}"></image>
+      <view class="rank-name">我</view>
+    </view>
+    <view class="rank-score">{{myRank.score}}</view>
+  </view>
+</view>
